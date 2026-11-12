@@ -4,6 +4,18 @@
 
 The **PRITHVI-AI Mobile Application** is a high-performance, cross-platform Android and iOS application built with **React Native (v0.74+)** and **Expo SDK 57**. Specifically engineered for deployment in rural, coastal, and agricultural regions of India where cellular network infrastructure fluctuates between 2G, 4G, and offline states, the app guarantees continuous operational availability through an offline-resilient architecture.
 
+- 📦 **Download APK (v1.0.0)**: [https://github.com/MaxTac2077/PRITHVI-AI/releases/download/v1.0.0/PRITHVI-AI.apk](https://github.com/MaxTac2077/PRITHVI-AI/releases/download/v1.0.0/PRITHVI-AI.apk)
+
+<div align="center">
+  <img src="../assets/Android UI.jpg" alt="PRITHVI-AI Native Android Suite" width="100%" />
+  <p><i>PRITHVI-AI Mobile Client: Trilingual Screen Deck, Low-Bandwidth Telemetry & Offline Cache Indicators</i></p>
+</div>
+
+<div align="center">
+  <img src="../assets/Alerts and SMS.jpg" alt="PRITHVI-AI Early Warning & SMS Gateway" width="100%" />
+  <p><i>Disaster Early Warning Center: CAP Alerts & SMS Broadcast Dispatch Engine</i></p>
+</div>
+
 ```mermaid
 flowchart TD
     subgraph DeviceSensors["Mobile Hardware Layer"]

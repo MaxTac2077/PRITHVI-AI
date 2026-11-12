@@ -13,16 +13,28 @@
 [![Nowcast Research](https://img.shields.io/badge/Research-Kalman%20%7C%20VERA--MoE%20Nowcast-f59e0b.svg?style=for-the-badge)](#4-prithvi-ai-meteorological-nowcast-research)
 
 <p align="center">
+  <a href="https://prithviai-for-india.vercel.app/"><img src="https://img.shields.io/badge/Live_Deployment-prithviai--for--india.vercel.app-2563eb?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Web Platform" /></a>
+  <a href="https://youtu.be/fSnAuuXHZz8?si=9xaaun6JXY016Udg"><img src="https://img.shields.io/badge/Video_Walkthrough-Web_UI_Demo-ef4444?style=for-the-badge&logo=youtube&logoColor=white" alt="Web UI Demo Video" /></a>
+  <a href="https://youtu.be/6lkrzdDcBKs?si=HbrU8hkHWt2iIhFW"><img src="https://img.shields.io/badge/Hardware_Demo-ESP32_Weather_Box-10b981?style=for-the-badge&logo=youtube&logoColor=white" alt="ESP32 Device Demo Video" /></a>
+</p>
+
+<p align="center">
   <b>A unified, zero-hallucination climate decision ecosystem engineered for the micro-climates, monsoon patterns, and vulnerable agrarian ecosystems of the Indian subcontinent.</b>
 </p>
 
-<img src="assets/sih_reference.png" alt="PRITHVI-AI Platform Showcase" width="100%" />
+### 🌐 Live Platform & Interactive Video Demonstrations
+
+| Demonstration / Resource | Direct Link | Summary |
+| :--- | :--- | :--- |
+| **🚀 Production Web Platform** | [https://prithviai-for-india.vercel.app/](https://prithviai-for-india.vercel.app/) | Live production deployment of the PRITHVI-AI environmental intelligence dashboard. |
+| **🖥️ Web UI Video Walkthrough** | [YouTube: Web UI Demo](https://youtu.be/fSnAuuXHZz8?si=9xaaun6JXY016Udg) | Video demonstration of the 8 diagnostic lenses, 1 Hz nowcast playhead, and convective storm map. |
+| **📟 ESP32 Weather Box Demo** | [YouTube: PRITHVI Device Demo](https://youtu.be/6lkrzdDcBKs?si=HbrU8hkHWt2iIhFW) | Live physical hardware demonstration of push-to-talk voice turns, OLED telemetry, and I2S audio playback. *(Alternate: [Mirror Link](https://youtu.be/6lkrzdDcBKs?si=QgMjg5jA3xECTQCj))* |
 
 </div>
 
 ---
 
-## Executive Summary & Mission
+## Overview
 
 **PRITHVI-AI** is a comprehensive meteorological nowcasting, agro-climatic intelligence, and multi-hazard early warning prototype. Designed from the ground up for the Indian subcontinent, the platform synthesizes geostationary satellite telemetry, atmospheric numerical models, hydrological river gauges, seismological feeds, and real-time ground sensors into actionable, vernacular guidance.
 
@@ -41,49 +53,10 @@ The platform presents these insights across three synchronized client paradigms:
 
 ## System Architecture
 
-```mermaid
-flowchart TD
-    subgraph DataIngestion["1. Environmental Telemetry & Satellite Ingestion Layer"]
-        INSAT["ISRO INSAT-3D / 3DS<br/>(Asia-Sector IR1 & VIS)"]
-        IMD["IMD CAP RSS &<br/>Cyclone Bulletins"]
-        OM["Open-Meteo High-Res<br/>(Weather & Soil)"]
-        GloFAS["Copernicus GloFAS<br/>(River Discharge)"]
-        CPCB["CPCB / Data.gov.in<br/>(Ambient Air Quality)"]
-        USGS["USGS FDSN & INCOIS<br/>(Seismic & Tsunami)"]
-        WBIT["Weatherbit Lightning<br/>(Observed VHF Flashes)"]
-    end
-
-    subgraph CoreEngine["2. PRITHVI-AI Computational & Research Core"]
-        KalmanFilter["Between-Scene Kalman<br/>Rain-Rate Smoother"]
-        VERABlend["VERA-MoE Hybrid<br/>Ensemble Blender"]
-        AdlerNegri["Adler-Negri IR<br/>Convective Cell Tracker"]
-        AgroRules["Deterministic Agronomic<br/>Prescription Engine"]
-        IndicLLM["Open-LLM Advisory Core<br/>(Ollama Qwen2.5 Multilingual)"]
-    end
-
-    subgraph ClientSurfaces["3. Synchronized Client Surfaces"]
-        WebUI["Web UI Dashboard<br/>(Next.js 14 / Tailwind / Leaflet)"]
-        MobileApp["Mobile Application<br/>(React Native / Expo SDK 57)"]
-        ESP32Box["ESP32 IoT Weather Box<br/>(NodeMCU-32 / I2S / OLED)"]
-    end
-
-    INSAT --> AdlerNegri
-    OM --> KalmanFilter
-    OM --> VERABlend
-    GloFAS --> AgroRules
-    CPCB --> AgroRules
-    USGS --> WebUI & MobileApp
-    WBIT --> AdlerNegri
-
-    AdlerNegri --> KalmanFilter
-    KalmanFilter --> VERABlend
-    VERABlend --> IndicLLM
-    AgroRules --> IndicLLM
-
-    CoreEngine -->|"REST / JSON APIs"| WebUI
-    CoreEngine -->|"Offline-Resilient HTTP"| MobileApp
-    CoreEngine -->|"Compact JSON & Audio I2S"| ESP32Box
-```
+<div align="center">
+  <img src="assets/System Architecture.jpg" alt="PRITHVI-AI Comprehensive System Architecture Blueprint" width="100%" />
+  <p><i>PRITHVI-AI Multi-Tier Environmental Ingestion, Processing Engine & Client Delivery Architecture</i></p>
+</div>
 
 ---
 
@@ -91,9 +64,12 @@ flowchart TD
 
 The **PRITHVI-AI Web UI** is an analytical command center engineered for agronomists, regional disaster management authorities, and field researchers. Built using **Next.js 14 App Router**, **Tailwind CSS**, and **Zustand**, it presents eight specialized diagnostic lenses.
 
+> 🌐 **Live Web Application**: [https://prithviai-for-india.vercel.app/](https://prithviai-for-india.vercel.app/)  
+> 📺 **Web UI Walkthrough Video**: [Watch Demo on YouTube](https://youtu.be/fSnAuuXHZz8?si=9xaaun6JXY016Udg)
+
 <div align="center">
-  <img src="assets/prithvi_3d_bot.png" alt="PRITHVI-AI 3D Assistant" width="220" />
-  <p><i>PRITHVI-AI Multilingual Diagnostic Assistant Mascot</i></p>
+  <img src="assets/Web UI.jpg" alt="PRITHVI-AI Web Command Center UI" width="100%" />
+  <p><i>PRITHVI-AI Web Dashboard: Real-Time Diagnostic Lenses, Decision Strips & Meteorological Nowcast Interface</i></p>
 </div>
 
 ### Architectural Lenses & Functional Tabs
@@ -105,98 +81,35 @@ The **PRITHVI-AI Web UI** is an analytical command center engineered for agronom
 2. **Nowcasting Studio**:
    - 1 Hz interactive simulation playhead stepping through 15-minute Kalman-interpolated rain-rate surfaces.
    - Physiography-gated estuarine tidal modeling (e.g., Haldia port Hugli tidal curve vs. storm runoff ponding).
-   - Dynamic catchment water retention gauge calculating localized waterlogging depth ($mm$).
-3. **Multi-Hazard Alert Center**:
+   - Dynamic catchment water retention gauge calculating localized waterlogging depth (mm).
+3. **Multi-Hazard Alert Center & SMS Broadcast Engine**:
    - Real-time Common Alerting Protocol (CAP) RSS ingestion categorized into severe weather, thunderstorm, cyclone, and heatwave vectors.
-   - National CPCB air quality index monitoring ($PM_{2.5}$, $PM_{10}$, $NO_2$, $SO_2$, $CO$) with health advisories.
+   - National CPCB air quality index monitoring (PM2.5, PM10, NO2, SO2, CO) with health advisories.
    - Global seismic monitors (USGS FDSN) and Indian Ocean tsunami watch bulletins (INCOIS ITEWS).
-4. **All-India Convective Storm Map**:
+   - Localized SMS dispatch engine delivering emergency weather bulletins in regional Indic dialects directly to registered farmer feature phones.
+
+<div align="center">
+  <img src="assets/Alerts and SMS.jpg" alt="PRITHVI-AI Multi-Hazard Alerts and SMS Early Warning Engine" width="100%" />
+  <p><i>PRITHVI-AI Disaster Early Warning Center: CAP Severity Feeds, Dynamic Evacuation Protocols & Vernacular SMS Broadcasts</i></p>
+</div>
+4. **All-India Convective Storm Map & GIS Layers**:
    - High-performance Leaflet / MapLibre canvas rendering georeferenced INSAT-3D/3DS Asia-sector thermal infrared clouds.
    - Live lightning strike overlay displaying observed VHF discharges within a 75 km radius.
    - 15-to-60 minute convective strike threat polygons categorized by flash intensity and cloud-top brightness depression.
+
+<div align="center">
+  <img src="assets/GIS Maps.jpg" alt="PRITHVI-AI High-Resolution Geospatial & Meteorological Layers" width="100%" />
+  <p><i>PRITHVI-AI All-India GIS Meteorological Mapping: Radar Inundation, Elevation DEM & Convective Storm Tracking</i></p>
+</div>
 5. **Predictive Models & Verification**:
    - Comparative evaluation between raw Open-Meteo forecasts and PRITHVI-AI's VERA-MoE hybrid ensemble.
    - 24-hour hourly verification plots tracking Mean Absolute Error (MAE) and agreement index against historical baselines.
 6. **Agro-Ecological & Mandi Intelligence**:
    - Real-time mandi commodity prices from Agmarknet (data.gov.in) mapped across regional agricultural markets.
-   - Daily FAO-56 Penman-Monteith reference evapotranspiration ($ET_0$) curves and root-zone soil saturation percentages.
+   - Daily FAO-56 Penman-Monteith reference evapotranspiration (ET₀) curves and root-zone soil saturation percentages.
 7. **Multilingual Open-LLM Advisor**:
    - Trilingual voice/text chat interface supporting English, Hindi (हिंदी), and Bengali (বাংলা).
    - Strict zero-hallucination orchestration: queries are mapped to deterministic `data()` toolpacks; unbounded numerical generation is strictly prohibited.
-
-### Web UI Sample Prototype Code
-
-```typescript
-// frontend/src/components/NowcastPlayhead.tsx
-import React, { useState, useEffect } from 'react';
-
-interface NowcastKnot {
-  timestamp: string;
-  rainRateMmHr: number;
-  confidenceScore: number;
-  source: 'kalman-interpolated' | 'insat-ir-proxy' | 'observed';
-}
-
-export const NowcastPlayhead: React.FC<{ knots: NowcastKnot[] }> = ({ knots }) => {
-  const [activeStep, setActiveStep] = useState<number>(0);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (!isPlaying) return;
-    const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % knots.length);
-    }, 1000); // 1 Hz playhead step
-    return () => clearInterval(interval);
-  }, [isPlaying, knots.length]);
-
-  const current = knots[activeStep] || { rainRateMmHr: 0, confidenceScore: 0, source: 'observed' };
-
-  return (
-    <div className="p-4 bg-slate-900 border border-slate-800 rounded-xl text-white shadow-xl">
-      <div className="flex items-center justify-between mb-3">
-        <h4 className="text-sm font-semibold tracking-wide uppercase text-cyan-400">
-          0–6h High-Resolution Nowcast Playhead (1 Hz)
-        </h4>
-        <span className="px-2.5 py-1 text-xs font-mono bg-cyan-950 text-cyan-300 rounded border border-cyan-800">
-          T+{activeStep * 15} min [{current.source}]
-        </span>
-      </div>
-
-      <div className="grid grid-cols-2 gap-4 my-3">
-        <div className="p-3 bg-slate-800/80 rounded-lg">
-          <p className="text-xs text-slate-400">Smoothed Rain-Rate</p>
-          <p className="text-2xl font-bold font-mono text-cyan-200">
-            {current.rainRateMmHr.toFixed(2)} <span className="text-sm font-normal">mm/h</span>
-          </p>
-        </div>
-        <div className="p-3 bg-slate-800/80 rounded-lg">
-          <p className="text-xs text-slate-400">Kalman State Confidence</p>
-          <p className="text-2xl font-bold font-mono text-emerald-400">
-            {(current.confidenceScore * 100).toFixed(0)}%
-          </p>
-        </div>
-      </div>
-
-      <div className="flex items-center gap-3 mt-4">
-        <button
-          onClick={() => setIsPlaying(!isPlaying)}
-          className="px-4 py-1.5 text-xs font-semibold bg-cyan-600 hover:bg-cyan-500 rounded transition"
-        >
-          {isPlaying ? 'PAUSE PLAYHEAD' : 'PLAY 1 Hz SIM'}
-        </button>
-        <input
-          type="range"
-          min="0"
-          max={knots.length - 1}
-          value={activeStep}
-          onChange={(e) => setActiveStep(Number(e.target.value))}
-          className="w-full h-1.5 bg-slate-700 rounded-lg accent-cyan-400 cursor-pointer"
-        />
-      </div>
-    </div>
-  );
-};
-```
 
 ---
 
@@ -205,8 +118,8 @@ export const NowcastPlayhead: React.FC<{ knots: NowcastKnot[] }> = ({ knots }) =
 The **PRITHVI-AI Mobile App** is a cross-platform Android and iOS application architected with **React Native** and **Expo SDK 57**. Built specifically for rural deployment with intermittent cellular connectivity, it features a fault-tolerant offline synchronization engine.
 
 <div align="center">
-  <img src="assets/mobile_splash.png" alt="PRITHVI-AI Mobile Splash Screen" width="240" />
-  <p><i>PRITHVI-AI Native Mobile App Splash & Branding</i></p>
+  <img src="assets/Android UI.jpg" alt="PRITHVI-AI Mobile App Interface Suite" width="100%" />
+  <p><i>PRITHVI-AI Native Mobile Suite: Multilingual Dashboard, Offline Telemetry Cards & Sandboxed Vector Map</i></p>
 </div>
 
 ### Mobile Architectural Highlights
@@ -249,64 +162,13 @@ sequenceDiagram
     end
 ```
 
-### Mobile Prototype Sample Code
-
-```typescript
-// app/hooks/useResilientNowcast.ts
-import { useQuery } from '@tanstack/react-query';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-interface TelemetrySnapshot {
-  temperatureC: number;
-  precipitationMmHr: number;
-  aqiValue: number;
-  severeWarning: string | null;
-  fetchedAt: string;
-}
-
-const CACHE_KEY = '@prithvi_last_snapshot';
-
-async function fetchWithHardTimeout(endpoint: string, timeoutMs = 2000): Promise<TelemetrySnapshot> {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-
-  try {
-    const res = await fetch(endpoint, { signal: controller.signal });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    await AsyncStorage.setItem(CACHE_KEY, JSON.stringify(data));
-    return data;
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
-export function useResilientNowcast(apiUrl: string) {
-  return useQuery<TelemetrySnapshot>({
-    queryKey: ['nowcast-telemetry'],
-    queryFn: async () => {
-      try {
-        return await fetchWithHardTimeout(`${apiUrl}/api/nowcast/live`);
-      } catch (err) {
-        // Fallback to flash cache on 2G drop or timeout
-        const cached = await AsyncStorage.getItem(CACHE_KEY);
-        if (cached) {
-          return { ...JSON.parse(cached), isStaleFallback: true };
-        }
-        throw new Error('Offline and no cached telemetry found.');
-      }
-    },
-    staleTime: 5 * 60 * 1000, // 5 min fresh window
-    refetchInterval: 60 * 1000,
-  });
-}
-```
-
 ---
 
 ## 3. ESP32 IoT Weather Box (Hardware Edge Device)
 
 The **PRITHVI-AI Weather Box** is an ambient edge device engineered for rural panchayats, community centers, and agrarian households lacking access to personal smartphones. Running on the **Robocraze NodeMCU-32 (ESP32-WROOM-32, 4MB Flash, 520KB SRAM)**, it provides zero-maintenance push-to-talk voice turns and live display updates.
+
+> 📺 **Physical Hardware Video Demo**: [Watch PRITHVI Device Demo on YouTube](https://youtu.be/6lkrzdDcBKs?si=HbrU8hkHWt2iIhFW) *(Alternate: [Mirror Link](https://youtu.be/6lkrzdDcBKs?si=QgMjg5jA3xECTQCj))*
 
 ```
 +----------------------------------------------------------------------------+
@@ -418,31 +280,53 @@ PRITHVI-AI formulates a multi-sensor assimilation model specifically tailored fo
 
 Geostationary satellite scans (ISRO INSAT-3D/3DS) arrive at discrete 15-minute intervals. Ground AWS rain-gauges report every 15 to 60 minutes. To bridge the latency between consecutive observations without artificial stepped discontinuities, PRITHVI-AI implements a discrete **Linear Kalman Filter** modeling localized precipitation dynamics:
 
-$$\mathbf{x}_k = \mathbf{F} \mathbf{x}_{k-1} + \mathbf{w}_{k-1}, \quad \mathbf{w} \sim \mathcal{N}(0, \mathbf{Q})$$
+$$
+\mathbf{x}_k = \mathbf{F} \mathbf{x}_{k-1} + \mathbf{w}_{k-1}, \quad \mathbf{w} \sim \mathcal{N}(0, \mathbf{Q})
+$$
 
-$$\mathbf{z}_k = \mathbf{H} \mathbf{x}_k + \mathbf{v}_k, \quad \mathbf{v} \sim \mathcal{N}(0, \mathbf{R})$$
+$$
+\mathbf{z}_k = \mathbf{H} \mathbf{x}_k + \mathbf{v}_k, \quad \mathbf{v} \sim \mathcal{N}(0, \mathbf{R})
+$$
 
-Where:
-- $\mathbf{x}_k = \begin{bmatrix} R_k \\ \dot{R}_k \end{bmatrix}$ is the atmospheric state vector composed of the instantaneous rain-rate $R_k$ ($mm/h$) and rain-rate acceleration $\dot{R}_k$ ($mm/h^2$).
-- $\mathbf{F} = \begin{bmatrix} 1 & \Delta t \\ 0 & 1 \end{bmatrix}$ represents the state transition matrix for time step $\Delta t = 60\text{ s}$.
-- $\mathbf{H} = \begin{bmatrix} 1 & 0 \end{bmatrix}$ maps the true latent state to the observed sensor/proxy rain-rate measurement $z_k$.
-- $\mathbf{Q}$ is the process noise covariance modeling cloud microphysical volatility.
-- $\mathbf{R}$ is the measurement noise covariance dynamically adjusted based on observation source reliability:
-  $$R_{\text{gauge}} < R_{\text{radar}} < R_{\text{satellite\_proxy}} < R_{\text{model\_analysis}}$$
+Where the state vector, transition matrix, and observation matrix are defined as:
+
+$$
+\mathbf{x}_k = \begin{bmatrix} R_k \\ \dot{R}_k \end{bmatrix}, \quad \mathbf{F} = \begin{bmatrix} 1 & \Delta t \\ 0 & 1 \end{bmatrix}, \quad \mathbf{H} = \begin{bmatrix} 1 & 0 \end{bmatrix}
+$$
+
+- $\mathbf{x}_k$: Atmospheric state vector composed of instantaneous rain-rate $R_k$ (mm/h) and rain-rate acceleration $\dot{R}_k$ (mm/h²).
+- $\mathbf{F}$: State transition matrix for time step $\Delta t = 60\text{ s}$.
+- $\mathbf{H}$: Observation matrix mapping the latent state to the observed scalar rain-rate measurement $z_k$.
+- $\mathbf{Q}$: Process noise covariance modeling cloud microphysical volatility.
+- $\mathbf{R}$: Measurement noise covariance dynamically adjusted based on observation source reliability:
+
+$$
+R_{\text{gauge}} < R_{\text{radar}} < R_{\text{satellite}} < R_{\text{nwp}}
+$$
 
 The predictive update steps compute:
 
-$$\hat{\mathbf{x}}_{k|k-1} = \mathbf{F} \hat{\mathbf{x}}_{k-1|k-1}$$
+$$
+\hat{\mathbf{x}}_{k|k-1} = \mathbf{F} \hat{\mathbf{x}}_{k-1|k-1}
+$$
 
-$$\mathbf{P}_{k|k-1} = \mathbf{F} \mathbf{P}_{k-1|k-1} \mathbf{F}^T + \mathbf{Q}$$
+$$
+\mathbf{P}_{k|k-1} = \mathbf{F} \mathbf{P}_{k-1|k-1} \mathbf{F}^T + \mathbf{Q}
+$$
 
 The measurement correction updates the state via the optimal Kalman Gain $\mathbf{K}_k$:
 
-$$\mathbf{K}_k = \mathbf{P}_{k|k-1} \mathbf{H}^T \left( \mathbf{H} \mathbf{P}_{k|k-1} \mathbf{H}^T + \mathbf{R}_k \right)^{-1}$$
+$$
+\mathbf{K}_k = \mathbf{P}_{k|k-1} \mathbf{H}^T \left( \mathbf{H} \mathbf{P}_{k|k-1} \mathbf{H}^T + \mathbf{R}_k \right)^{-1}
+$$
 
-$$\hat{\mathbf{x}}_{k|k} = \hat{\mathbf{x}}_{k|k-1} + \mathbf{K}_k \left( z_k - \mathbf{H} \hat{\mathbf{x}}_{k|k-1} \right)$$
+$$
+\hat{\mathbf{x}}_{k|k} = \hat{\mathbf{x}}_{k|k-1} + \mathbf{K}_k \left( z_k - \mathbf{H} \hat{\mathbf{x}}_{k|k-1} \right)
+$$
 
-$$\mathbf{P}_{k|k} = (\mathbf{I} - \mathbf{K}_k \mathbf{H}) \mathbf{P}_{k|k-1}$$
+$$
+\mathbf{P}_{k|k} = (\mathbf{I} - \mathbf{K}_k \mathbf{H}) \mathbf{P}_{k|k-1}
+$$
 
 This formulation guarantees that the 1 Hz nowcast playhead maintains physical smoothness across observation transitions while adapting instantly to incoming satellite or ground telemetry.
 
@@ -452,16 +336,21 @@ This formulation guarantees that the 1 Hz nowcast playhead maintains physical sm
 
 PRITHVI-AI integrates a **Variational Ensemble Rain Assimilation with Mixture of Experts (VERA-MoE)** framework. The final precipitation estimate $\hat{y}_t$ at forecast horizon $t$ is computed as a dynamically gated mixture across diverse meteorological candidates:
 
-$$\hat{y}_t = \sum_{m=1}^{M} g_m(\mathbf{c}_t) \cdot f_m(\mathbf{x}_t)$$
+$$
+\hat{y}_t = \sum_{m=1}^{M} g_m(\mathbf{c}_t) \cdot f_m(\mathbf{x}_t)
+$$
 
-Where:
-- $f_m(\mathbf{x}_t)$ represents individual member predictors:
-  1. $f_1$: Satellite thermal infrared brightness temperature proxy ($T_b$).
-  2. $f_2$: Micro-physics advection extrapolated radar field.
-  3. $f_3$: High-resolution Open-Meteo numerical analysis.
-  4. $f_4$: Climatological diurnal background (NASA POWER baseline).
-- $g_m(\mathbf{c}_t)$ are the gating weights computed through a softmax function conditioned on environmental contextual vector $\mathbf{c}_t$ (including convective available potential energy (CAPE), surface relative humidity, and solar zenith angle):
-  $$g_m(\mathbf{c}_t) = \frac{\exp(\mathbf{w}_m^T \mathbf{c}_t)}{\sum_{j=1}^{M} \exp(\mathbf{w}_j^T \mathbf{c}_t)}, \quad \sum_{m=1}^{M} g_m(\mathbf{c}_t) = 1$$
+Where individual member predictors $f_m(\mathbf{x}_t)$ represent:
+1. $f_1$: Satellite thermal infrared brightness temperature proxy ($T_b$).
+2. $f_2$: Micro-physics advection extrapolated radar field.
+3. $f_3$: High-resolution Open-Meteo numerical analysis.
+4. $f_4$: Climatological diurnal background (NASA POWER baseline).
+
+The gating weights $g_m(\mathbf{c}_t)$ are computed through a softmax function conditioned on environmental contextual vector $\mathbf{c}_t$ (including convective available potential energy CAPE, surface relative humidity, and solar zenith angle):
+
+$$
+g_m(\mathbf{c}_t) = \frac{\exp(\mathbf{w}_m^T \mathbf{c}_t)}{\sum_{j=1}^{M} \exp(\mathbf{w}_j^T \mathbf{c}_t)}, \quad \sum_{m=1}^{M} g_m(\mathbf{c}_t) = 1
+$$
 
 ---
 
@@ -471,15 +360,17 @@ High-resolution Doppler Weather Radar (DWR) coverage is incomplete across certai
 
 Convective rain-rate is inferred using an adapted **Adler-Negri Convective Stratiform Technique (CST)** relating cloud-top brightness temperature $T_b$ (Kelvin) to convective rainfall intensity:
 
-$$R(T_b) = \begin{cases} 
+$$
+R(T_b) = \begin{cases} 
   a_0 + a_1 T_b + a_2 T_b^2 & \text{if } T_b < T_{\text{threshold}} \\
   0 & \text{otherwise}
-\end{cases}$$
+\end{cases}
+$$
 
 Where:
 - $T_{\text{threshold}} = 235\text{ K}$ defines the convective cloud threshold.
 - Deep convective cores with $T_b < 210\text{ K}$ indicate overshooting cloud tops and trigger high-priority lightning and squall warnings.
-- The spatial coordinates are bounded to the IMD SATMET SOP Asia sector ($40^{\circ}\text{E} - 110^{\circ}\text{E}$, $10^{\circ}\text{S} - 45^{\circ}\text{N}$) and masked strictly within the Indian landmass ($68.0^{\circ}\text{E} - 97.5^{\circ}\text{E}$, $6.5^{\circ}\text{N} - 37.5^{\circ}\text{N}$) to eliminate non-territorial false alarms.
+- The spatial coordinates are bounded to the IMD SATMET SOP Asia sector (40°E – 110°E, 10°S – 45°N) and masked strictly within the Indian landmass (68.0°E – 97.5°E, 6.5°N – 37.5°N) to eliminate non-territorial false alarms.
 
 ---
 
@@ -487,13 +378,14 @@ Where:
 
 Convective lightning strikes represent one of the deadliest meteorological threats in South Asia. PRITHVI-AI formulates a real-time strike probability index ($P_{\text{strike}} \in [0, 1]$) evaluated across a 75 km regional radius:
 
-$$P_{\text{strike}} = \sigma \left( \beta_0 + \beta_1 N_{\text{flash}} + \beta_2 \left( \frac{\text{CAPE}}{1000} \right) + \beta_3 \Delta T_b \right)$$
+$$
+P_{\text{strike}} = \frac{1}{1 + \exp\left( -\left[ \beta_0 + \beta_1 N_{\text{flash}} + \beta_2 \left( \frac{\text{CAPE}}{1000} \right) + \beta_3 \Delta T_b \right] \right)}
+$$
 
 Where:
-- $\sigma(z) = \frac{1}{1 + e^{-z}}$ is the standard sigmoid activation.
-- $N_{\text{flash}}$ is the number of VHF lightning strokes detected by Weatherbit within the preceding 45-minute moving window.
-- $\text{CAPE}$ is the convective available potential energy ($J/kg$).
-- $\Delta T_b = \max(0, T_{\text{anvil}} - T_{\text{core}})$ represents the brightness temperature gradient across the convective cloud anvil.
+- $N_{\text{flash}}$: Number of VHF lightning strokes detected by Weatherbit within the preceding 45-minute moving window.
+- $\text{CAPE}$: Convective available potential energy (J/kg).
+- $\Delta T_b = \max(0, T_{\text{anvil}} - T_{\text{core}})$: Brightness temperature gradient across the convective cloud anvil.
 - Threat windows are classified into:
   - **No Threat** ($P_{\text{strike}} < 0.20$)
   - **Elevated Watch** ($0.20 \le P_{\text{strike}} < 0.60$)
@@ -579,33 +471,193 @@ def adler_negri_rain_proxy(tb_kelvin: float) -> float:
 
 ---
 
-## 5. Visual Prototype Gallery
+## 5. Backend Engine & Ingestion Implementation
+
+The backend is built with **FastAPI** and **Pydantic v2**, orchestrating asynchronous ingestion loops, multi-hazard risk evaluators, and zero-hallucination climate advisory pipelines.
+
+### 1. Multi-Sensor Satellite & Telemetry Ingestion Worker
+
+The ingestion service runs periodic non-blocking cycles fetching satellite radiometry, radar mosaics, and ground observations:
+
+```python
+# backend/app/ingest/cycle.py - Asynchronous Multi-Source Telemetry Ingestion
+from __future__ import annotations
+import asyncio
+from datetime import datetime, timezone
+from typing import Any
+from app.store import ingest_status
+from app.providers import imd_insat, mosdac, gpm_imerg
+
+SATELLITES = (
+    {"id": "imd_ir1", "name": "INSAT-3DS IR1 JPEG"},
+    {"id": "mosdac_hem", "name": "INSAT-3DS Hydro-Estimator"},
+    {"id": "imerg", "name": "NASA GPM IMERG Early"},
+)
+
+async def run_ingest_cycle() -> dict[str, Any]:
+    """Executes single ingestion cycle across space agency feeds."""
+    cid = ingest_status.begin(list(SATELLITES))
+    cycle_summary = {"cycle_id": cid, "timestamp": datetime.now(timezone.utc).isoformat(), "success": True}
+
+    # 1. Fetch IMD INSAT-3D/3DS Asia-Sector Thermal Infrared Frame
+    ingest_status.update(satellite={"id": "imd_ir1", "status": "fetching"})
+    try:
+        frame = await imd_insat.fetch_frame()
+        if frame.get("body"):
+            ingest_status.update(satellite={"id": "imd_ir1", "status": "ok", "time": frame.get("image_time")})
+        else:
+            ingest_status.update(satellite={"id": "imd_ir1", "status": "empty"})
+    except Exception as exc:
+        ingest_status.update(satellite={"id": "imd_ir1", "status": "fail", "detail": str(exc)[:120]})
+        cycle_summary["success"] = False
+
+    # 2. Ingest MOSDAC Hydro-Estimator Method (HEM) Rain Products
+    ingest_status.update(satellite={"id": "mosdac_hem", "status": "fetching"})
+    try:
+        hem_data = await asyncio.wait_for(mosdac.ingest_latest(allow_l1b=False), timeout=180)
+        ingest_status.update(satellite={"id": "mosdac_hem", "status": "ok", "records": len(hem_data)})
+    except Exception as exc:
+        ingest_status.update(satellite={"id": "mosdac_hem", "status": "stale_fallback", "detail": str(exc)[:120]})
+
+    return cycle_summary
+```
+
+### 2. Multi-Hazard Composite Risk Calculation Engine
+
+PRITHVI-AI calculates calibrated multi-hazard warning levels across thunderstorm strike probability, heavy precipitation exceedance, and official IMD CAP alert prior:
+
+```python
+# backend/app/science/hazard_engine.py - Calibrated Hazard Assessment
+from __future__ import annotations
+from typing import Any
+
+def calculate_precipitation_exceedance(hourly_forecasts: list[dict[str, Any]], threshold_mm: float = 10.0) -> float:
+    """
+    Computes time-decay weighted probability of precipitation exceeding critical mm threshold
+    across the forward 0-6 hour nowcast horizon.
+    """
+    if not hourly_forecasts:
+        return 0.0
+    weighted_hits = 0.0
+    weight_sum = 0.0
+    for step_idx, knot in enumerate(hourly_forecasts[:6]):
+        decay_weight = 1.0 / (1.0 + step_idx) # Recency decay
+        precip_mm = float(knot.get("precipitation_mm", 0.0))
+        p_wet = float(knot.get("precipitation_probability", 0.2))
+        
+        prob = p_wet if precip_mm >= threshold_mm else p_wet * min(1.0, precip_mm / max(threshold_mm, 0.2))
+        if precip_mm >= threshold_mm:
+            prob = max(prob, 0.55) # Floor confidence for severe threshold
+        weighted_hits += decay_weight * prob
+        weight_sum += decay_weight
+        
+    return round(min(0.95, max(0.02, weighted_hits / max(weight_sum, 1e-6))), 3)
+
+def evaluate_hazard_alert_level(
+    p_heavy_rain: float,
+    lightning_strike_p: float,
+    cap_active_alert: dict[str, Any] | None,
+    convective_jump: float = 0.0
+) -> dict[str, Any]:
+    """
+    Synthesizes physical risk vectors into deterministic action words:
+    'No alert' | 'Possible' | 'Warning' (never hallucinates risk scores).
+    """
+    cap = cap_active_alert or {}
+    
+    # Red / Severe Warning condition
+    if cap.get("severity") in ("Extreme", "Severe") and cap.get("active"):
+        alert_word = "Warning"
+    elif lightning_strike_p >= 0.62 or convective_jump >= 3.0 or p_heavy_rain >= 0.55:
+        alert_word = "Warning"
+    # Amber / Possible threat condition
+    elif cap.get("thunderstorm_watch") or lightning_strike_p >= 0.35 or p_heavy_rain >= 0.28:
+        alert_word = "Possible"
+    else:
+        alert_word = "No alert"
+        
+    return {
+        "status": alert_word,
+        "p_heavy_rain": p_heavy_rain,
+        "lightning_probability": lightning_strike_p,
+        "cap_active": bool(cap.get("active")),
+        "prescriptions": [
+            "Cease field irrigation" if alert_word != "No alert" else "Normal field operations",
+            "Seek grounded shelter" if lightning_strike_p >= 0.35 else "Field trafficability safe"
+        ]
+    }
+```
+
+### 3. Occupational Heat Stress (Simplified Outdoor WBGT)
+
+```python
+# backend/app/science/heat_stress.py - Wet Bulb Globe Temperature Proxy
+from math import exp
+from typing import Any
+
+def estimate_outdoor_wbgt(temp_c: float, relative_humidity: float, wind_speed_ms: float = 1.0) -> dict[str, Any]:
+    """
+    Calculates outdoor WBGT labour risk proxy from ambient temperature and relative humidity
+    calibrated for agricultural field workers in tropical climates.
+    """
+    t = float(temp_c)
+    rh = max(0.0, min(100.0, float(relative_humidity)))
+    
+    # Vapour pressure calculation (hPa)
+    vapor_pressure = (rh / 100.0) * 6.105 * exp(17.27 * t / (237.7 + t))
+    wbgt = 0.567 * t + 0.393 * vapor_pressure + 3.94
+    
+    if wind_speed_ms >= 3.0:
+        wbgt -= 0.4 # Wind convective cooling adjustment
+        
+    wbgt = round(max(18.0, min(42.0, wbgt)), 1)
+    
+    # Occupational labour thresholds
+    if wbgt >= 32.0:
+        work_regime = "STOP_OUTDOOR_WORK"
+    elif wbgt >= 28.0:
+        work_regime = "LIMIT_CONTINUOUS_LABOUR"
+    elif wbgt >= 26.0:
+        work_regime = "CAUTION_HYDRATION_REQUIRED"
+    else:
+        work_regime = "NORMAL_FIELD_WORK"
+        
+    return {"wbgt_celsius": wbgt, "work_regime": work_regime}
+```
+
+---
+
+## 6. Visual Prototype Gallery
 
 <div align="center">
 
 | Prototype Visual Asset | Functional Description |
 | :---: | :---: |
-| <img src="assets/sih_reference.png" alt="Smart India Hackathon Poster" width="400" /> | **Smart India Hackathon Reference Poster**: Comprehensive multi-hazard early warning and agro-advisory operational architecture. |
-| <img src="assets/prithvi_3d_bot.png" alt="PRITHVI-AI 3D Bot" width="280" /> | **PRITHVI-AI Multilingual Diagnostic Mascot**: Embedded in the Web UI and mobile application for interactive speech and text advisory. |
-| <img src="assets/mobile_splash.png" alt="Mobile App UI" width="280" /> | **Native Android / iOS Application Interface**: React Native Expo splash screen and mobile brand identity. |
-| <img src="assets/logo.png" alt="PRITHVI-AI Logo" width="240" /> | **Official PRITHVI-AI Insignia**: Symbolizing meteorological observation, earth observation satellites, and agrarian protection. |
+| <img src="assets/System Architecture.jpg" alt="System Architecture" width="380" /> | **Full-Stack System Architecture**: End-to-end ingestion, multi-model nowcast engine, AI advisor, and tri-client delivery. |
+| <img src="assets/Web UI.jpg" alt="Web Command Center UI" width="380" /> | **High-Density Web Command Center**: 8 diagnostic lenses, 0–6h nowcast playhead, CAP alerts, and agro-prescriptions. |
+| <img src="assets/Android UI.jpg" alt="Android Mobile App" width="380" /> | **Offline-First Android Application**: Low-bandwidth field dashboard, TanStack query caching, and sandboxed vector maps. |
+| <img src="assets/GIS Maps.jpg" alt="GIS Meteorological Layers" width="380" /> | **All-India Convective GIS Layers**: INSAT-3D thermal IR cells, Doppler radar overlays, and lightning strike threat polygons. |
+| <img src="assets/Alerts and SMS.jpg" alt="Alerts and SMS" width="380" /> | **Multi-Hazard Early Warning & SMS Gateway**: CAP severity matrices, INCOIS bulletins, and regional SMS broadcasts. |
+| <img src="assets/mobile_splash.png" alt="Mobile App UI" width="380" /> | **Native Android / iOS Application Interface**: React Native Expo splash screen and mobile brand identity. |
 
 </div>
 
 ---
 
-## 6. Repository Structure & Specifications
+## 7. Repository Structure & Specifications
 
 This repository serves strictly as a **prototype, specification, and architectural documentation repository**. To inspect in-depth hardware schematics, mobile blueprints, web designs, and mathematical derivations, explore the `docs/` catalog:
 
 ```
 .
 ├── assets/
+│   ├── Alerts and SMS.jpg           # Disaster early warning, CAP matrix & SMS broadcast visual
+│   ├── Android UI.jpg               # Mobile app interface suite & offline telemetry screens
+│   ├── GIS Maps.jpg                 # All-India GIS convective storm & radar mapping visual
 │   ├── icon.svg                     # Vector brand symbol
 │   ├── logo.png                     # Official high-resolution platform logo
 │   ├── mobile_splash.png            # Mobile application splash screen asset
-│   ├── prithvi_3d_bot.png           # 3D interactive AI assistant mascot
-│   └── sih_reference.png            # SIH comprehensive platform reference poster
+│   └── System Architecture.jpg      # End-to-end multi-tier platform architecture visual
 ├── docs/
 │   ├── ESP32_DEVICE.md              # Hardware schematics, I2S wiring & captive portal specs
 │   ├── MOBILE_APP.md                # React Native Expo architecture, offline cache & sandboxed Leaflet
