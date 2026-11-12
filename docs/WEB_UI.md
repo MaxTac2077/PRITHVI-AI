@@ -6,6 +6,9 @@ The **PRITHVI-AI Web Dashboard** is a high-density diagnostic command center des
 
 The frontend is completely decoupled from the backend; it acts purely as an HTTP/CORS client consuming REST and Server-Sent Events (SSE) from the PRITHVI-AI backend gateway.
 
+- 🌐 **Live Web Application**: [https://prithviai-for-india.vercel.app/](https://prithviai-for-india.vercel.app/)
+- 📺 **Interactive Web UI Video Walkthrough**: [Watch on YouTube](https://youtu.be/fSnAuuXHZz8?si=9xaaun6JXY016Udg)
+
 ```mermaid
 flowchart TD
     subgraph ClientState["Client State & Transport Layer"]

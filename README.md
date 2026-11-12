@@ -13,8 +13,22 @@
 [![Nowcast Research](https://img.shields.io/badge/Research-Kalman%20%7C%20VERA--MoE%20Nowcast-f59e0b.svg?style=for-the-badge)](#4-prithvi-ai-meteorological-nowcast-research)
 
 <p align="center">
+  <a href="https://prithviai-for-india.vercel.app/"><img src="https://img.shields.io/badge/Live_Deployment-prithviai--for--india.vercel.app-2563eb?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Web Platform" /></a>
+  <a href="https://youtu.be/fSnAuuXHZz8?si=9xaaun6JXY016Udg"><img src="https://img.shields.io/badge/Video_Walkthrough-Web_UI_Demo-ef4444?style=for-the-badge&logo=youtube&logoColor=white" alt="Web UI Demo Video" /></a>
+  <a href="https://youtu.be/6lkrzdDcBKs?si=HbrU8hkHWt2iIhFW"><img src="https://img.shields.io/badge/Hardware_Demo-ESP32_Weather_Box-10b981?style=for-the-badge&logo=youtube&logoColor=white" alt="ESP32 Device Demo Video" /></a>
+</p>
+
+<p align="center">
   <b>A unified, zero-hallucination climate decision ecosystem engineered for the micro-climates, monsoon patterns, and vulnerable agrarian ecosystems of the Indian subcontinent.</b>
 </p>
+
+### 🌐 Live Platform & Interactive Video Demonstrations
+
+| Demonstration / Resource | Direct Link | Summary |
+| :--- | :--- | :--- |
+| **🚀 Production Web Platform** | [https://prithviai-for-india.vercel.app/](https://prithviai-for-india.vercel.app/) | Live production deployment of the PRITHVI-AI environmental intelligence dashboard. |
+| **🖥️ Web UI Video Walkthrough** | [YouTube: Web UI Demo](https://youtu.be/fSnAuuXHZz8?si=9xaaun6JXY016Udg) | Video demonstration of the 8 diagnostic lenses, 1 Hz nowcast playhead, and convective storm map. |
+| **📟 ESP32 Weather Box Demo** | [YouTube: PRITHVI Device Demo](https://youtu.be/6lkrzdDcBKs?si=HbrU8hkHWt2iIhFW) | Live physical hardware demonstration of push-to-talk voice turns, OLED telemetry, and I2S audio playback. *(Alternate: [Mirror Link](https://youtu.be/6lkrzdDcBKs?si=QgMjg5jA3xECTQCj))* |
 
 <img src="assets/sih_reference.png" alt="PRITHVI-AI Platform Showcase" width="100%" />
 
@@ -90,6 +104,9 @@ flowchart TD
 ## 1. Web UI Prototype Specification
 
 The **PRITHVI-AI Web UI** is an analytical command center engineered for agronomists, regional disaster management authorities, and field researchers. Built using **Next.js 14 App Router**, **Tailwind CSS**, and **Zustand**, it presents eight specialized diagnostic lenses.
+
+> 🌐 **Live Web Application**: [https://prithviai-for-india.vercel.app/](https://prithviai-for-india.vercel.app/)  
+> 📺 **Web UI Walkthrough Video**: [Watch Demo on YouTube](https://youtu.be/fSnAuuXHZz8?si=9xaaun6JXY016Udg)
 
 <div align="center">
   <img src="assets/prithvi_3d_bot.png" alt="PRITHVI-AI 3D Assistant" width="220" />
@@ -307,6 +324,8 @@ export function useResilientNowcast(apiUrl: string) {
 ## 3. ESP32 IoT Weather Box (Hardware Edge Device)
 
 The **PRITHVI-AI Weather Box** is an ambient edge device engineered for rural panchayats, community centers, and agrarian households lacking access to personal smartphones. Running on the **Robocraze NodeMCU-32 (ESP32-WROOM-32, 4MB Flash, 520KB SRAM)**, it provides zero-maintenance push-to-talk voice turns and live display updates.
+
+> 📺 **Physical Hardware Video Demo**: [Watch PRITHVI Device Demo on YouTube](https://youtu.be/6lkrzdDcBKs?si=HbrU8hkHWt2iIhFW) *(Alternate: [Mirror Link](https://youtu.be/6lkrzdDcBKs?si=QgMjg5jA3xECTQCj))*
 
 ```
 +----------------------------------------------------------------------------+

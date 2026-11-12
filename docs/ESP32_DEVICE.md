@@ -9,6 +9,8 @@ The Weather Box solves this through a dedicated, standalone physical appliance r
 - **Glanceable Ambient Display**: High-contrast 0.96" I2C OLED display continuously refreshes micro-climate metrics, rain accumulation, and disaster warnings.
 - **Physical LED Status Array**: Instant visual alert indicators for network health, voice processing, and emergency hazard warnings.
 
+> 📺 **Physical Hardware Video Demonstration**: [Watch on YouTube](https://youtu.be/6lkrzdDcBKs?si=HbrU8hkHWt2iIhFW) *(Mirror / Alternate: [Share Link](https://youtu.be/6lkrzdDcBKs?si=QgMjg5jA3xECTQCj))*
+
 ```mermaid
 flowchart TD
     subgraph PowerSystem["5V / 3.3V Power Rail"]
